@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: trustbazaar-capstone
+    env: node
+    plan: free
+    buildCommand: npm install --prefix server && npm install --prefix client && npm run build --prefix client
+    startCommand: npm start --prefix server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEMO_MODE
+        value: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: "*"
+

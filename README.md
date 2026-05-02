@@ -1,5 +1,7 @@
 # TrustBazaar Capstone
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/abhinav0717/Buying-Review-System-TrustBazar)
+
 TrustBazaar is a real-world marketplace trust system where buyers can rate sellers only after a completed purchase. The project demonstrates JWT authentication, database relationships, buyer reviews, seller reputation, real-time chat, pagination, professional Tailwind UI, and deployment-ready frontend/backend separation.
 
 ## Tech Stack
@@ -61,7 +63,20 @@ Backend: http://localhost:5000
 
 ## Deployment
 
-### Render Backend
+### One-Link Render Deployment
+
+The root `render.yaml` can deploy the backend and serve the React build from the same Render service. This is the easiest college-demo deployment because the deployed app uses `DEMO_MODE=true` and does not require MongoDB.
+
+- Root directory: repository root
+- Build command: `npm install --prefix server && npm install --prefix client && npm run build --prefix client`
+- Start command: `npm start --prefix server`
+- Environment variables:
+  - `NODE_ENV=production`
+  - `DEMO_MODE=true`
+  - `JWT_SECRET`
+  - `CLIENT_URL=*`
+
+### Render Backend Only
 
 - Root directory: `server`
 - Build command: `npm install`
