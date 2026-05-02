@@ -37,9 +37,9 @@ copy server\.env.example server\.env
 copy client\.env.example client\.env
 ```
 
-3. Update `server/.env` with your MongoDB connection string and JWT secret.
+3. For instant local demo mode, set `DEMO_MODE=true` in `server/.env`. MongoDB is not required in this mode.
 
-4. Seed demo data:
+4. To use MongoDB instead, set `DEMO_MODE=false`, add your `MONGODB_URI`, and seed demo data:
 
 ```bash
 npm.cmd run seed
@@ -80,4 +80,3 @@ Backend: http://localhost:5000
 - Environment variables:
   - `VITE_API_URL=https://your-render-service.onrender.com/api`
   - `VITE_SOCKET_URL=https://your-render-service.onrender.com`
-
